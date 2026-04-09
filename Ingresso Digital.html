@@ -562,7 +562,7 @@ Diretores, Coordenadores Pedagógicos, Supervisores e titulares de cargos do qua
             </div>
 
             <div>
-                              <a id="link-eve-indi" href="https://ingressodigital.com/comprar/19574/bruna-louise-meus-15-anos-">
+                              <a id="link-eve-indi" href="#">
                   <button type="button" class="btn btn-comp-ing">Comprar ingressos</button>
                 </a>
                             
@@ -845,6 +845,16 @@ function activeClassHora(clicado, eve) {
     } else {
       btnHora.textContent = hora;
     }
+  }
+
+  // Link "Comprar ingressos" -> lngressos.html com parametros
+  const linkComprar = document.getElementById('link-eve-indi');
+  if (linkComprar) {
+    const p = new URLSearchParams();
+    if (data) p.set('data', data);
+    if (hora) p.set('hora', hora);
+    if (local) p.set('local', local);
+    linkComprar.href = 'lngressos.html?' + p.toString();
   }
 })();
 </script>
